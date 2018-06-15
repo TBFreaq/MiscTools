@@ -33,6 +33,7 @@ Partial Class ManualRename
         Me.TxtBxNewName = New System.Windows.Forms.TextBox()
         Me.BTNNewFilename = New System.Windows.Forms.Button()
         Me.BTNReadFiles = New System.Windows.Forms.Button()
+        Me.CHKBXSubfolders = New System.Windows.Forms.CheckBox()
         Me.GRPFileInfo.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -58,7 +59,7 @@ Partial Class ManualRename
         Me.GRPFileInfo.Controls.Add(Me.LBLFileCreatedInfo)
         Me.GRPFileInfo.Controls.Add(Me.LBL2)
         Me.GRPFileInfo.Controls.Add(Me.LBL1)
-        Me.GRPFileInfo.Location = New System.Drawing.Point(12, 38)
+        Me.GRPFileInfo.Location = New System.Drawing.Point(12, 62)
         Me.GRPFileInfo.Name = "GRPFileInfo"
         Me.GRPFileInfo.Size = New System.Drawing.Size(776, 63)
         Me.GRPFileInfo.TabIndex = 2
@@ -101,14 +102,14 @@ Partial Class ManualRename
         '
         'TxtBxNewName
         '
-        Me.TxtBxNewName.Location = New System.Drawing.Point(12, 109)
+        Me.TxtBxNewName.Location = New System.Drawing.Point(12, 133)
         Me.TxtBxNewName.Name = "TxtBxNewName"
         Me.TxtBxNewName.Size = New System.Drawing.Size(667, 20)
         Me.TxtBxNewName.TabIndex = 3
         '
         'BTNNewFilename
         '
-        Me.BTNNewFilename.Location = New System.Drawing.Point(685, 107)
+        Me.BTNNewFilename.Location = New System.Drawing.Point(685, 131)
         Me.BTNNewFilename.Name = "BTNNewFilename"
         Me.BTNNewFilename.Size = New System.Drawing.Size(103, 23)
         Me.BTNNewFilename.TabIndex = 4
@@ -124,11 +125,24 @@ Partial Class ManualRename
         Me.BTNReadFiles.Text = "Read Files"
         Me.BTNReadFiles.UseVisualStyleBackColor = True
         '
+        'CHKBXSubfolders
+        '
+        Me.CHKBXSubfolders.AutoSize = True
+        Me.CHKBXSubfolders.Checked = True
+        Me.CHKBXSubfolders.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CHKBXSubfolders.Location = New System.Drawing.Point(652, 39)
+        Me.CHKBXSubfolders.Name = "CHKBXSubfolders"
+        Me.CHKBXSubfolders.Size = New System.Drawing.Size(136, 17)
+        Me.CHKBXSubfolders.TabIndex = 6
+        Me.CHKBXSubfolders.Text = "Rename in Subfolders?"
+        Me.CHKBXSubfolders.UseVisualStyleBackColor = True
+        '
         'ManualRename
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 141)
+        Me.ClientSize = New System.Drawing.Size(800, 163)
+        Me.Controls.Add(Me.CHKBXSubfolders)
         Me.Controls.Add(Me.BTNReadFiles)
         Me.Controls.Add(Me.BTNNewFilename)
         Me.Controls.Add(Me.TxtBxNewName)
@@ -155,4 +169,5 @@ Partial Class ManualRename
     Friend WithEvents TxtBxNewName As TextBox
     Friend WithEvents BTNNewFilename As Button
     Friend WithEvents BTNReadFiles As Button
+    Friend WithEvents CHKBXSubfolders As CheckBox
 End Class

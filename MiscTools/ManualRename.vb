@@ -10,8 +10,13 @@ Public Class ManualRename
     End Sub
 
     Private Sub BTNReadFiles_Click(sender As Object, e As EventArgs) Handles BTNReadFiles.Click
+        FileSelection = 0
         SelectedPath = TxtBxDirectory.Text
-        Files = Directory.GetFiles(SelectedPath)
+        If (CHKBXSubfolders.Checked = True) Then
+            Files = Directory.GetFiles(SelectedPath, "*", SearchOption.AllDirectories)
+        Else
+            Files = Directory.GetFiles(SelectedPath, "*", SearchOption.TopDirectoryOnly)
+        End If
         'Load first item
         If (FileSelection < Files.Length) Then
             LBLFileNameInfo.Text = Path.GetFileNameWithoutExtension(Files(FileSelection))
@@ -23,6 +28,10 @@ Public Class ManualRename
 
     Private Sub BTNNewFilename_Click(sender As Object, e As EventArgs) Handles BTNNewFilename.Click
         'Start Renaming
+        If (TxtBxNewName.Text = "") Then
+            MsgBox("Please enter a name")
+            Exit Sub
+        End If
         If Not (TxtBxNewName.Text = Path.GetFileNameWithoutExtension(Files(FileSelection))) Then
             Try
                 My.Computer.FileSystem.RenameFile(Files(FileSelection), TxtBxNewName.Text + Extension)
@@ -35,12 +44,17 @@ Public Class ManualRename
     End Sub
 
     Private Sub LoadNextItem()
-        FileSelection += 1
-        If (FileSelection < Files.Length) Then
+        If (FileSelection + 1 < Files.Length) Then
+            FileSelection += 1
             LBLFileNameInfo.Text = Path.GetFileNameWithoutExtension(Files(FileSelection))
             LBLFileCreatedInfo.Text = File.GetCreationTime(Files(FileSelection))
             TxtBxNewName.Text = Path.GetFileNameWithoutExtension(Files(FileSelection))
             Extension = Path.GetExtension(Files(FileSelection))
+        Else
+            LBLFileCreatedInfo.Text = ""
+            LBLFileNameInfo.Text = ""
+            TxtBxNewName.Text = ""
+            MsgBox("No File left")
         End If
     End Sub
 End Class

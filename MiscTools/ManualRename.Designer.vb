@@ -26,10 +26,10 @@ Partial Class ManualRename
         Me.TxtBxDirectory = New System.Windows.Forms.TextBox()
         Me.BTNChooseDirectory = New System.Windows.Forms.Button()
         Me.GRPFileInfo = New System.Windows.Forms.GroupBox()
-        Me.LBL1 = New System.Windows.Forms.Label()
-        Me.LBL2 = New System.Windows.Forms.Label()
-        Me.LBLFileCreatedInfo = New System.Windows.Forms.Label()
         Me.LBLFileNameInfo = New System.Windows.Forms.Label()
+        Me.LBLFileCreatedInfo = New System.Windows.Forms.Label()
+        Me.LBL2 = New System.Windows.Forms.Label()
+        Me.LBL1 = New System.Windows.Forms.Label()
         Me.TxtBxNewName = New System.Windows.Forms.TextBox()
         Me.BTNNewFilename = New System.Windows.Forms.Button()
         Me.BTNReadFiles = New System.Windows.Forms.Button()
@@ -65,14 +65,21 @@ Partial Class ManualRename
         Me.GRPFileInfo.TabStop = False
         Me.GRPFileInfo.Text = "File Information"
         '
-        'LBL1
+        'LBLFileNameInfo
         '
-        Me.LBL1.AutoSize = True
-        Me.LBL1.Location = New System.Drawing.Point(6, 16)
-        Me.LBL1.Name = "LBL1"
-        Me.LBL1.Size = New System.Drawing.Size(57, 13)
-        Me.LBL1.TabIndex = 0
-        Me.LBL1.Text = "File Name:"
+        Me.LBLFileNameInfo.AutoSize = True
+        Me.LBLFileNameInfo.Location = New System.Drawing.Point(93, 16)
+        Me.LBLFileNameInfo.Name = "LBLFileNameInfo"
+        Me.LBLFileNameInfo.Size = New System.Drawing.Size(0, 13)
+        Me.LBLFileNameInfo.TabIndex = 3
+        '
+        'LBLFileCreatedInfo
+        '
+        Me.LBLFileCreatedInfo.AutoSize = True
+        Me.LBLFileCreatedInfo.Location = New System.Drawing.Point(93, 40)
+        Me.LBLFileCreatedInfo.Name = "LBLFileCreatedInfo"
+        Me.LBLFileCreatedInfo.Size = New System.Drawing.Size(0, 13)
+        Me.LBLFileCreatedInfo.TabIndex = 2
         '
         'LBL2
         '
@@ -83,21 +90,14 @@ Partial Class ManualRename
         Me.LBL2.TabIndex = 1
         Me.LBL2.Text = "File Created on:"
         '
-        'LBLFileCreatedInfo
+        'LBL1
         '
-        Me.LBLFileCreatedInfo.AutoSize = True
-        Me.LBLFileCreatedInfo.Location = New System.Drawing.Point(93, 40)
-        Me.LBLFileCreatedInfo.Name = "LBLFileCreatedInfo"
-        Me.LBLFileCreatedInfo.Size = New System.Drawing.Size(0, 13)
-        Me.LBLFileCreatedInfo.TabIndex = 2
-        '
-        'LBLFileNameInfo
-        '
-        Me.LBLFileNameInfo.AutoSize = True
-        Me.LBLFileNameInfo.Location = New System.Drawing.Point(93, 16)
-        Me.LBLFileNameInfo.Name = "LBLFileNameInfo"
-        Me.LBLFileNameInfo.Size = New System.Drawing.Size(0, 13)
-        Me.LBLFileNameInfo.TabIndex = 3
+        Me.LBL1.AutoSize = True
+        Me.LBL1.Location = New System.Drawing.Point(6, 16)
+        Me.LBL1.Name = "LBL1"
+        Me.LBL1.Size = New System.Drawing.Size(57, 13)
+        Me.LBL1.TabIndex = 0
+        Me.LBL1.Text = "File Name:"
         '
         'TxtBxNewName
         '
